@@ -3,6 +3,7 @@ const productList = document.getElementById('productsList');
 
 let editModal = document.getElementById('editModal')
 let editForm = document.getElementById('editForm')
+
 function botonEditar(pid) {
   function onModalShown(event) {
     let button = event.relatedTarget
@@ -34,6 +35,7 @@ const priceElement = document.getElementById('editedPrice');
 const thumbnailElement = document.getElementById('editedThumbnail');
 const codeElement = document.getElementById('editedCode');
 const stockElement = document.getElementById('editedStock');
+
 function saveChanges() {
   const productId = document.getElementById('productId').value;
   const title = titleElement.value;
@@ -59,7 +61,7 @@ function saveChanges() {
     editedProduct
   });
 }
-  
+
 const container_details = document.getElementById('container_details');
 
 productDetailsSocket.on("productDetails", ({ product }) => {
