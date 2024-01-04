@@ -29,18 +29,19 @@ const socketServer = new Server(httpServer);
 let userEmailApp;
 
 // * mongoose a mongoAtlas-- 
-// mongoose.connect(`mongodb+srv://enzozanino99:${password}@cluster99.u9fivzm.mongodb.net/${db_name}?retryWrites=true&w=majority`)
-//     .then(() => console.log("DB Connected"))
-//     .catch((err) => console.log(err))
+mongoose
+	.connect(`mongodb+srv://enzozanino99:${password}@cluster99.u9fivzm.mongodb.net/${db_name}?retryWrites=true&w=majority`)
+    .then(() => console.log("DB Connected"))
+    .catch((err) => console.log(err))
 // * mongoose a mongoAtlas ---> El mongoose de abajo ↓ es a MongoDB compass 
 
-mongoose
-	.connect(`mongodb://localhost:27017/${db_name}`)
-	.then(() => console.log("Data base connected"))
-	.catch((e) => {
-		console.log("Data base connection error");
-		console.log(e);
-	});
+// mongoose
+// 	.connect(`mongodb://localhost:27017/${db_name}`)
+// 	.then(() => console.log("Data base connected"))
+// 	.catch((e) => {
+// 		console.log("Data base connection error");
+// 		console.log(e);
+// 	});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -246,4 +247,4 @@ socketServer.on("connection", async (socketClient) => {
 	});
 });
 
-	// export { socketServer }; ?
+// export { socketServer }; 
